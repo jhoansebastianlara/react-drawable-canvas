@@ -6,6 +6,7 @@ import assign from 'object-assign'
 class DrawableCanvas extends React.Component {
 
   componentDidMount(){
+		console.log('componentDidMount on DrawableCanvas');
     const canvas = ReactDOM.findDOMNode(this);
 
     canvas.style.width = '100%';
@@ -19,7 +20,7 @@ class DrawableCanvas extends React.Component {
     {
       let image = new Image();
       image.src = this.props.defaultImage;
-      
+
       image.onload = function()
       {
         context.drawImage(image, 0, 0, canvas.width, canvas.height);
